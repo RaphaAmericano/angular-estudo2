@@ -12,10 +12,12 @@ import { LoginComponent } from './login/login.component';
 // import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 // import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 // import { CursosService } from './cursos/cursos.service';
+import { AuthService } from './login/auth.service';
 
 //import { routing } from './app.routing';
 import { AppRoutingModule } from './app.routing.module';
-import { CursosModule } from './cursos/cursos.module';
+//import { CursosModule } from './cursos/cursos.module';
+//import { AlunosModule } from './alunos/alunos.module';
 
 
 @NgModule({
@@ -30,11 +32,14 @@ import { CursosModule } from './cursos/cursos.module';
   imports: [
     BrowserModule,
     MaterializeModule,
-    CursosModule,
+    //CursosModule, //modulo foi carregado no modulo de routing e só pode ser carregado lá para o caso de lazy loading
+    //AlunosModule,
     AppRoutingModule
     //routing
   ],
-  //providers: [CursosService],
+  providers: [
+    AuthService//,CursosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
