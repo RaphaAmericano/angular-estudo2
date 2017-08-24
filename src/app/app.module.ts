@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { routing } from './app.routing';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
+import { AuthService } from './login/auth.service';
 import { CursosService } from './cursos/cursos.service';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
@@ -29,7 +30,7 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
     MaterializeModule,
     routing
   ],
-  providers: [CursosService],
+  providers: [CursosService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
